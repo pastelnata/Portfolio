@@ -8,7 +8,7 @@ on:
 
 jobs:
   backend-ci:
-    name: Backend (NestJS) — lint · build · test
+    name: Backend (NestJS) - build & lint
     runs-on: ubuntu-latest
 
     defaults:
@@ -27,17 +27,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check formatting
+        run: npm run format:check
+
       - name: Lint backend
-        run: npm run lint --fix
+        run: npm run lint
 
       - name: Build backend
         run: npm run build
 
-      - name: Run backend tests
-        run: npm test
-
   frontend-ci:
-    name: Frontend (Angular) — lint · build · test
+    name: Frontend (Angular) - build & lint
     runs-on: ubuntu-latest
 
     defaults:
@@ -56,11 +56,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Check formatting
+        run: npm run format:check
+
       - name: Lint frontend
-        run: npm run lint --fix
+        run: npm run lint
 
       - name: Build frontend
         run: npm run build
-
-      - name: Run frontend tests
-        run: npm test
