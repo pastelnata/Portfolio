@@ -8,10 +8,10 @@ import {
   Patch,
   ParseIntPipe,
 } from '@nestjs/common';
-import { ProjectService } from './project.service';
-import { CreateProjectDto } from './dto/create-project.dto';
-import { UpdateProjectDto } from './dto/update-project.dto';
-import type { Project } from '../prisma/generated/client';
+import { ProjectService } from './project.service.js';
+import { CreateProjectDto } from './dto/create-project.dto.js';
+import { UpdateProjectDto } from './dto/update-project.dto.js';
+import type { Project } from '../prisma/generated/client.js';
 
 @Controller('projects')
 export class ProjectController {
