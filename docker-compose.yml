@@ -21,7 +21,17 @@ services:
     env_file:
       - .env
     ports:
-        - "3000:3000"
+      - "3000:3000"
+
+  frontend:
+    build: ./frontend
+    image: frontend-image:latest
+    depends_on:
+      - backend
+    env_file:
+      - .env
+    ports:
+      - "4200:4200"
 
 volumes:
   postgres_data:

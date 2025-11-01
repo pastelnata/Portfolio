@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 # Install dependencies first for caching
 COPY package*.json ./
+
 RUN npm ci
 
 # Copy project files
