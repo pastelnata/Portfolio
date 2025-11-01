@@ -11,7 +11,7 @@ export class CreateProjectDto {
   @IsUrl()
   demoLink?: string;
 
-  @IsString()
+  @IsUrl()
   codeLink: string;
 
   @IsArray()
