@@ -19,7 +19,7 @@ export class CreateProjectDto {
   techStack: string[];
 
   @IsArray()
-  @IsString()
+  @IsString({ each: true })
   features: string[];
 
   @IsOptional()
