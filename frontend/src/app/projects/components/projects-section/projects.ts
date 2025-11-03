@@ -15,7 +15,7 @@ export class Projects implements OnInit {
 
   ngOnInit() {
     this.projectsService.getProjects().subscribe((projects) => (this.projects = projects));
-    if(!this.projects) {
+    if (!this.projects) {
       this.projects = [
         {
           id: 1,
@@ -43,7 +43,7 @@ export class Projects implements OnInit {
           techStack: ['vue', 'javascript', 'less'],
           features: ['Feature X', 'Feature Y', 'Feature Z'],
           createdAt: new Date(),
-        } as Project
+        } as Project,
       ];
     }
   }

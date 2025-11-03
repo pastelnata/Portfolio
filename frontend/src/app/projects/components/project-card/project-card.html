@@ -1,14 +1,19 @@
 <mat-card appearance="outlined">
   <div class="overflow-hidden w-full h-[192px] rounded-lg">
     <!--TODO make this a svg from the backend-->
-    <img mat-card-image class="object-cover w-full h-full" src="/assets/exampleImage.jpg" alt="Photo of a Shiba Inu" />
+    <img
+      mat-card-image
+      class="object-cover w-full h-full"
+      src="/assets/exampleImage.jpg"
+      alt="Photo of a Shiba Inu"
+    />
   </div>
   <div class="p-[10px]">
     <mat-card-header>
       <mat-card-title>{{ project.name }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <p class="text-base text-gray-600 pb-[10px]">{{project.description}}</p>
+      <p class="text-base text-gray-600 pb-[10px]">{{ project.description }}</p>
       <mat-chip-set aria-label="Tech Stack">
         @for (tech of project.techStack; track tech) {
           <mat-chip>{{ tech }}</mat-chip>
