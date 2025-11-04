@@ -1,13 +1,14 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Project } from '../../models/project.model';
-import { HttpClient } from '@angular/common/http';
 import { ProjectsService } from '../../projects.service';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { ProjectCard } from '../project-card/project-card';
 
 @Component({
-  standalone: false,
   selector: 'app-projects',
   templateUrl: './projects.html',
   styleUrl: './projects.scss',
+  imports: [MatGridListModule, ProjectCard],
 })
 export class Projects implements OnInit {
   public projects!: Project[];
