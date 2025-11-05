@@ -1,24 +1,37 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { Project } from '../../models/project.model';
-import {
-  MatCardModule,
-} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatIcon } from '@angular/material/icon';
-import { MatButton } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { ProjectDetails } from '../project-details/project-details';
+import { InfoChips } from '../../../shared/info-chips/info-chips';
 
 @Component({
   selector: 'app-project-card',
   templateUrl: './project-card.html',
-  styleUrl: './project-card.scss',
+  styleUrls: ['./project-card.scss'],
   imports: [
     MatCardModule,
     MatChipsModule,
-    MatIcon,
-    MatButton
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    InfoChips,
   ],
 })
 export class ProjectCard {
+  // inject the MatDialog service so we can open dialogs
+  private dialog = inject(MatDialog);
+
   @Input()
   public project!: Project;
+
+  openDetails(project: Project) {
+    this.dialog.open(ProjectDetails, {
+      data: project,
+      width: '600px',
+    });
+  }
 }

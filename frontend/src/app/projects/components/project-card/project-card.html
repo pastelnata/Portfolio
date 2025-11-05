@@ -14,22 +14,18 @@
     </mat-card-header>
     <mat-card-content>
       <p class="text-base text-gray-600 pb-[10px]">{{ project.description }}</p>
-      <mat-chip-set aria-label="Tech Stack">
-        @for (tech of project.techStack; track tech) {
-          <mat-chip>{{ tech }}</mat-chip>
-        }
-      </mat-chip-set>
+      <app-info-chips [chipContent]="project.techStack"></app-info-chips>
     </mat-card-content>
     <mat-card-actions class="flex ml-[3px] items-center gap-3">
-      <button matButton="tonal">
+      <button matButton="outlined" (click)="openDetails(project)">
         <mat-icon>info_outline</mat-icon>
         Details
       </button>
-      <button matButton="tonal">
+      <button matButton="outlined">
         <mat-icon>video_file</mat-icon>
         Demo
       </button>
-      <button matButton="tonal">
+      <button matButton="outlined">
         <mat-icon>code</mat-icon>
         Code
       </button>
