@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatListModule } from '@angular/material/list';
 import { Project } from '../../models/project.model';
 import { MatButton, MatIconButton } from '@angular/material/button';
@@ -23,10 +23,7 @@ import { MatCardImage } from '@angular/material/card';
   styleUrl: './project-details.scss',
 })
 export class ProjectDetails {
-  private dialogRef = inject<MatDialogRef<ProjectDetails>>(MatDialogRef);
   public data = inject<Project>(MAT_DIALOG_DATA);
 
-  close(result?: unknown) {
-    this.dialogRef?.close(result);
-  }
+  protected readonly window = window;
 }

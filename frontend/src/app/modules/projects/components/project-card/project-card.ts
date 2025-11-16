@@ -24,7 +24,9 @@ import { InfoChips } from '../../../../shared/info-chips/info-chips';
 export class ProjectCard {
   private dialog = inject(MatDialog);
 
-  public project = input<Project>();
+  public project = input.required<Project>();
+
+  readonly window = window;
 
   openDetails(project: Project) {
     this.dialog.open(ProjectDetails, {

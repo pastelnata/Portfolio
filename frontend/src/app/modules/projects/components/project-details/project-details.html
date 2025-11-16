@@ -10,18 +10,20 @@
     <img
       mat-card-image
       class="object-cover w-full h-[30vh]"
-      src="assets/exampleImage.jpg"
-      alt="Photo of a Shiba Inu"
+      [src]="data.imageUrl ?? 'assets/exampleImage.jpg'"
+      alt="Project Image"
     />
   </div>
   <h3 class="text-xl">Tech Stack</h3>
   <app-info-chips class="flex mb-2" [chipContent]="data.techStack"></app-info-chips>
   <div class="flex gap-3 mb-6">
-    <button matButton="filled">
-      <mat-icon>video_file</mat-icon>
-      Demo
-    </button>
-    <button matButton="outlined">
+    @if (data.demoLink) {
+      <button matButton="filled" (click)="window.open(data.demoLink)">
+        <mat-icon>video_file</mat-icon>
+        Demo
+      </button>
+    }
+    <button matButton="outlined" (click)="window.open(data.codeLink)">
       <mat-icon>code</mat-icon>
       Code
     </button>

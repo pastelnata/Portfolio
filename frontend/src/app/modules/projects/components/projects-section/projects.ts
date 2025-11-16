@@ -16,13 +16,14 @@ export class Projects implements OnInit {
 
   ngOnInit() {
     this.projectsService.getProjects().subscribe((projects) => (this.projects = projects));
-    if (!this.projects) {
+    if (!this.projects || this.projects.length === 0) {
       this.projects = [
         {
           id: 1,
           name: 'Sample Project',
           description: 'This is a sample project description.',
-          codeLink: 'link',
+          codeLink: 'https://github.com/pastelnata/Portfolio',
+          demoLink: 'https://github.com/pastelnata/Portfolio',
           techStack: ['angular', 'typescript', 'scss'],
           features: ['Feature 1', 'Feature 2', 'Feature 3'],
           createdAt: new Date(),
@@ -31,7 +32,8 @@ export class Projects implements OnInit {
           id: 2,
           name: 'Another Project',
           description: 'This is another project description.',
-          codeLink: 'link',
+          codeLink: 'https://github.com/pastelnata/Portfolio',
+          demoLink: 'https://github.com/pastelnata/Portfolio',
           techStack: ['react', 'javascript', 'css'],
           features: ['Feature A', 'Feature B', 'Feature C'],
           createdAt: new Date(),
@@ -40,7 +42,8 @@ export class Projects implements OnInit {
           id: 3,
           name: 'Third Project',
           description: 'This is the third project description.',
-          codeLink: 'link',
+          codeLink: 'https://github.com/pastelnata/Portfolio',
+          demoLink: 'https://github.com/pastelnata/Portfolio',
           techStack: ['vue', 'javascript', 'less'],
           features: ['Feature X', 'Feature Y', 'Feature Z'],
           createdAt: new Date(),
