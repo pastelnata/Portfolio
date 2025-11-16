@@ -22,7 +22,6 @@ import { InfoChips } from '../../../../shared/info-chips/info-chips';
   ],
 })
 export class ProjectCard {
-  // inject the MatDialog service so we can open dialogs
   private dialog = inject(MatDialog);
 
   @Input()
@@ -31,7 +30,8 @@ export class ProjectCard {
   openDetails(project: Project) {
     this.dialog.open(ProjectDetails, {
       data: project,
-      width: '600px',
+      width: '30vw',
+      height: '90vh'
     });
   }
 }
