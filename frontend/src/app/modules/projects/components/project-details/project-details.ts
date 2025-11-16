@@ -8,22 +8,14 @@ import { InfoChips } from '../../../../shared/info-chips/info-chips';
 import { MatCardImage } from '@angular/material/card';
 
 @Component({
-  selector: 'app-project-details',
-  standalone: true,
-  imports: [
-    MatDialogModule,
-    MatListModule,
-    MatIconModule,
-    MatIconButton,
-    InfoChips,
-    MatButton,
-    MatCardImage,
-  ],
-  templateUrl: './project-details.html',
-  styleUrl: './project-details.scss',
+    selector: 'app-project-details',
+    standalone: true,
+    imports: [MatDialogModule, MatListModule, MatIconModule, MatIconButton, InfoChips, MatButton, MatCardImage],
+    templateUrl: './project-details.html',
+    styleUrl: './project-details.scss'
 })
 export class ProjectDetails {
-  public data = inject<Project>(MAT_DIALOG_DATA);
+    public data = inject<Project>(MAT_DIALOG_DATA);
 
-  protected readonly window = window;
+    protected readonly window = window;
 }

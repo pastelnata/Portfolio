@@ -5,17 +5,17 @@ import { Project } from '../modules/projects/models/project.model';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root'
 })
 export class ProjectsService {
-  private http = inject(HttpClient);
-  private readonly apiUrl = `${environment.apiUrl}/projects`;
+    private http = inject(HttpClient);
+    private readonly apiUrl = `${environment.apiUrl}/projects`;
 
-  getProjects(): Observable<Project[]> {
-    return this.http.get<Project[]>(`${this.apiUrl}`);
-  }
+    getProjects(): Observable<Project[]> {
+        return this.http.get<Project[]>(`${this.apiUrl}`);
+    }
 
-  getProject(projectId: string): Observable<Project> {
-    return this.http.get<Project>(`${this.apiUrl}/${projectId}`);
-  }
+    getProject(projectId: string): Observable<Project> {
+        return this.http.get<Project>(`${this.apiUrl}/${projectId}`);
+    }
 }

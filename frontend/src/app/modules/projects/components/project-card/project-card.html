@@ -1,38 +1,37 @@
 <mat-card appearance="outlined">
-  <div class="overflow-hidden w-full h-[192px] rounded-lg">
-    <!--TODO make this a svg from the backend-->
-    <img
-      mat-card-image
-      class="object-cover w-full h-full"
-      [src]="project().imageUrl ?? 'assets/exampleImage.jpg'"
-      alt="Project Image"
-      height="771"
-      width="1080"
-    />
-  </div>
-  <div class="p-[10px]">
-    <mat-card-header>
-      <mat-card-title>{{ project().name }}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p class="text-base text-gray-600 pb-[10px]">{{ project().description }}</p>
-      <app-info-chips [chipContent]="project().techStack"></app-info-chips>
-    </mat-card-content>
-    <mat-card-actions class="flex ml-[3px] items-center gap-3">
-      <button matButton="outlined" (click)="openDetails(project())">
-        <mat-icon>info_outline</mat-icon>
-        Details
-      </button>
-      @if (project().demoLink) {
-        <button matButton="filled" (click)="window.open(project().demoLink)">
-          <mat-icon>video_file</mat-icon>
-          Demo
-        </button>
-      }
-      <button matButton="outlined" (click)="window.open(project().codeLink)">
-        <mat-icon>code</mat-icon>
-        Code
-      </button>
-    </mat-card-actions>
-  </div>
+    <div class="overflow-hidden w-full h-[192px] rounded-lg">
+        <img
+            mat-card-image
+            class="object-cover w-full h-full"
+            [src]="project().imageUrl ?? 'assets/exampleImage.jpg'"
+            alt="Project Image"
+            height="771"
+            width="1080"
+        />
+    </div>
+    <div class="p-[10px]">
+        <mat-card-header>
+            <mat-card-title>{{ project().name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="text-base text-gray-600 pb-[10px]">{{ project().description }}</p>
+            <app-info-chips [chipContent]="project().techStack"></app-info-chips>
+        </mat-card-content>
+        <mat-card-actions class="flex ml-[3px] items-center gap-3">
+            <button matButton="outlined" (click)="openDetails(project())">
+                <mat-icon>info_outline</mat-icon>
+                Details
+            </button>
+            @if (project().demoLink) {
+                <button matButton="filled" (click)="window.open(project().demoLink)">
+                    <mat-icon>video_file</mat-icon>
+                    Demo
+                </button>
+            }
+            <button matButton="outlined" (click)="window.open(project().codeLink)">
+                <mat-icon>code</mat-icon>
+                Code
+            </button>
+        </mat-card-actions>
+    </div>
 </mat-card>

@@ -9,30 +9,23 @@ import { ProjectDetails } from '../project-details/project-details';
 import { InfoChips } from '../../../../shared/info-chips/info-chips';
 
 @Component({
-  selector: 'app-project-card',
-  templateUrl: './project-card.html',
-  styleUrls: ['./project-card.scss'],
-  imports: [
-    MatCardModule,
-    MatChipsModule,
-    MatIconModule,
-    MatButtonModule,
-    MatDialogModule,
-    InfoChips,
-  ],
+    selector: 'app-project-card',
+    templateUrl: './project-card.html',
+    styleUrls: ['./project-card.scss'],
+    imports: [MatCardModule, MatChipsModule, MatIconModule, MatButtonModule, MatDialogModule, InfoChips]
 })
 export class ProjectCard {
-  private dialog = inject(MatDialog);
+    private dialog = inject(MatDialog);
 
-  public project = input.required<Project>();
+    public project = input.required<Project>();
 
-  readonly window = window;
+    readonly window = window;
 
-  openDetails(project: Project) {
-    this.dialog.open(ProjectDetails, {
-      data: project,
-      width: '30vw',
-      height: '90vh',
-    });
-  }
+    openDetails(project: Project) {
+        this.dialog.open(ProjectDetails, {
+            data: project,
+            width: '30vw',
+            height: '90vh'
+        });
+    }
 }
