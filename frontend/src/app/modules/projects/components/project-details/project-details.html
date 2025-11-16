@@ -1,0 +1,41 @@
+<div class="flex justify-between items-center">
+    <h2 mat-dialog-title class="dialog-title">{{ data.name }}</h2>
+    <button matIconButton class="mr-[20px]" [mat-dialog-close]="true">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+<mat-dialog-content class="overflow-auto">
+    <div class="overflow-hidden w-full rounded-lg mb-6">
+        <img
+            mat-card-image
+            class="object-cover w-full h-[30vh]"
+            [src]="data.imageUrl ?? 'assets/exampleImage.jpg'"
+            alt="Project Image"
+        />
+    </div>
+    <h3 class="text-xl">Tech Stack</h3>
+    <app-info-chips class="flex mb-2" [chipContent]="data.techStack"></app-info-chips>
+    <div class="flex gap-3 mb-6">
+        @if (data.demoLink) {
+            <button matButton="filled" (click)="window.open(data.demoLink)">
+                <mat-icon>video_file</mat-icon>
+                Demo
+            </button>
+        }
+        <button matButton="outlined" (click)="window.open(data.codeLink)">
+            <mat-icon>code</mat-icon>
+            Code
+        </button>
+    </div>
+    <h3 class="text-xl">Key Features</h3>
+    <mat-list>
+        @for (feature of data.features; track feature) {
+            <mat-list-item>
+                <div class="flex items-center gap-2">
+                    <mat-icon class="bullet-point">lens</mat-icon>
+                    <span class="text-base flex-1 whitespace-normal break-words">{{ feature }}</span>
+                </div>
+            </mat-list-item>
+        }
+    </mat-list>
+</mat-dialog-content>

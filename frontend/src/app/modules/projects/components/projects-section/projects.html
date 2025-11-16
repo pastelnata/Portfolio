@@ -1,0 +1,11 @@
+<div class="flex flex-col items-center">
+    <h1 class="flex items-center text-4xl mb-[30px] font-medium">Featured Projects</h1>
+
+    <mat-grid-list class="w-full" cols="2" rowHeight="400px" gutterSize="20px">
+        @for (project of projects; track project.id) {
+            <mat-grid-tile class="grid-tile">
+                <app-project-card class="w-full" [project]="project"></app-project-card>
+            </mat-grid-tile>
+        }
+    </mat-grid-list>
+</div>
