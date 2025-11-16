@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Project } from '../../models/project.model';
-import { ProjectsService } from '../../projects.service';
+import { ProjectsService } from '../../../../services/projects.service';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ProjectCard } from '../project-card/project-card';
 
@@ -45,6 +45,15 @@ export class Projects implements OnInit {
           features: ['Feature X', 'Feature Y', 'Feature Z'],
           createdAt: new Date(),
         } as Project,
+        {
+          id: 4,
+          name: 'Fourth Project',
+          description: 'This is the fourth project description.',
+          codeLink: 'link',
+          techStack: ['svelte', 'typescript', 'css'],
+          features: ['Feature Alpha', 'Feature Beta', 'Feature Gamma'],
+          createdAt: new Date(),
+        }
       ];
     }
   }
