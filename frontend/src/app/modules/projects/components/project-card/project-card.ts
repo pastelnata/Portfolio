@@ -1,4 +1,4 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { Project } from '../../models/project.model';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -24,8 +24,7 @@ import { InfoChips } from '../../../../shared/info-chips/info-chips';
 export class ProjectCard {
   private dialog = inject(MatDialog);
 
-  @Input()
-  public project!: Project;
+  public project = input<Project>();
 
   openDetails(project: Project) {
     this.dialog.open(ProjectDetails, {

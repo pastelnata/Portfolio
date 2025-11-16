@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import {Component, input } from '@angular/core';
 import { MatChip, MatChipSet } from '@angular/material/chips';
 
 @Component({
@@ -11,6 +11,5 @@ import { MatChip, MatChipSet } from '@angular/material/chips';
   styleUrl: './info-chips.scss',
 })
 export class InfoChips {
-  @Input()
-  public chipContent!: string[];
+  public chipContent= input<string[]>();
 }
