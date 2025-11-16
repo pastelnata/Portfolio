@@ -53,7 +53,7 @@ export class Projects implements OnInit {
           techStack: ['svelte', 'typescript', 'css'],
           features: ['Feature Alpha', 'Feature Beta', 'Feature Gamma'],
           createdAt: new Date(),
-        }
+        },
       ];
     }
   }

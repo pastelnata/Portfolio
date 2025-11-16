@@ -8,9 +8,8 @@ describe('InfoChips', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [InfoChips]
-    })
-    .compileComponents();
+      imports: [InfoChips],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(InfoChips);
     component = fixture.componentInstance;

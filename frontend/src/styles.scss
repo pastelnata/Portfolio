@@ -20,11 +20,7 @@ html {
 }
 
 :root {
-  @include mat.card-overrides(
-    (
-
-    )
-  )
+  @include mat.card-overrides(());
 }
 
 body {
@@ -53,4 +49,3 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
-

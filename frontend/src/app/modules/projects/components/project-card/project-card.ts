@@ -30,7 +30,7 @@ export class ProjectCard {
     this.dialog.open(ProjectDetails, {
       data: project,
       width: '30vw',
-      height: '90vh'
+      height: '90vh',
     });
   }
 }
