@@ -4,7 +4,7 @@ import { MatListModule } from '@angular/material/list';
 import { Project } from '../../models/project.model';
 import { MatButton, MatIconButton } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { InfoChips } from '../../../../shared/info-chips/info-chips';
+import { InfoChips } from '../../../../shared/components/info-chips/info-chips';
 import { MatCardImage } from '@angular/material/card';
 
 @Component({

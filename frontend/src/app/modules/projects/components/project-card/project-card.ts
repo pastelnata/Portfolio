@@ -6,7 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { ProjectDetails } from '../project-details/project-details';
-import { InfoChips } from '../../../../shared/info-chips/info-chips';
+import { InfoChips } from '../../../../shared/components/info-chips/info-chips';
 
 @Component({
     selector: 'app-project-card',
