@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Project } from '../modules/projects/models/project.model';
 import { Observable } from 'rxjs';
@@ -15,7 +15,8 @@ export class ProjectsService {
         return this.http.get<Project[]>(`${this.apiUrl}`);
     }
 
-    getProject(projectId: string): Observable<Project> {
-        return this.http.get<Project>(`${this.apiUrl}/${projectId}`);
+    getProjectByName(projectName: string): Observable<Project> {
+      const params = new HttpParams().set('name', projectName);
+        return this.http.get<Project>(`${this.apiUrl}`, { params });
     }
 }

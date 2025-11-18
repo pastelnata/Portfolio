@@ -1,12 +1,12 @@
 import {
-  Controller,
-  Get,
-  Post,
-  Body,
-  Delete,
-  Param,
-  Patch,
-  ParseIntPipe,
+    Controller,
+    Get,
+    Post,
+    Body,
+    Delete,
+    Param,
+    Patch,
+    ParseIntPipe, Query,
 } from '@nestjs/common';
 import { ProjectService } from './project.service.js';
 import { CreateProjectDto } from './dto/create-project.dto.js';
@@ -27,6 +27,11 @@ export class ProjectController {
     @Param('projectId', ParseIntPipe) projectId: number,
   ): Promise<Project | null> {
     return this.projectService.findOne(projectId);
+  }
+
+  @Get()
+  findProjectByName(@Query('name') name: string) {
+    return this.projectService.findByName(name);
   }
 
   @Post()
