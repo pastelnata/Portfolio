@@ -7,11 +7,13 @@
 @use 'tailwindcss';
 
 html {
+  color-scheme: light dark;
     @include mat.theme(
         (
             color: (
-                primary: mat.$rose-palette,
-                tertiary: mat.$red-palette
+                primary: mat.$magenta-palette,
+                tertiary: mat.$violet-palette,
+                theme-type: dark
             ),
             typography: Roboto,
             density: 0
@@ -20,26 +22,50 @@ html {
 }
 
 :root {
-    @include mat.card-overrides(());
+
 }
 
 body {
     // Default the application to a light color theme. This can be changed to
     // `dark` to enable the dark color theme, or to `light dark` to defer to the
     // user's system settings.
-    color-scheme: light;
+    color-scheme: light dark;
 
     // Set a default background, font and text colors for the application using
     // Angular Material's system-level CSS variables. Learn more about these
     // variables at https://material.angular.dev/guide/system-variables
-    background-color: var(--mat-sys-surface);
-    color: var(--mat-sys-on-surface);
-    font: var(--mat-sys-body-medium);
-
+    background-color: var(--mat-sys-surface-container-low);
+    color: var(--mat-sys-tertiary-fixed-dim);
+    p { color: var(--mat-sys-on-background)};
+    h2 { color: var(--mat-sys-tertiary-fixed-dim); }
+    mat-button { color: var(--mat-sys-tertiary-fixed-dim)};
     // Reset the user agent margin.
     margin: 0;
 }
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  @include mat.button-overrides(
+        (
+          text-label-text-color: var(--mat-sys-tertiary-fixed-dim),
+          filled-container-color: var(--mat-sys-tertiary-fixed-dim),
+          outlined-label-text-color: var(--mat-sys-tertiary-fixed-dim),
+        )
+  );
+
+  @include mat.card-overrides(
+        (
+          outlined-container-color: var(--mat-sys-surface-dim),
+          outlined-outline-color: var(--mat-sys-surface-container-highest),
+        )
+  );
+
+  @include mat.chips-overrides(
+        (
+          label-text-color: var(--mat-sys-tertiary-fixed),
+        )
+  )
+}
 
 html,
 body {
@@ -47,5 +73,4 @@ body {
 }
 body {
     margin: 0;
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
